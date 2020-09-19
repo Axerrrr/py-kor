@@ -2,4 +2,6 @@
 /dist/
 /build/
 /py_kor.egg-info/
-/.idea/
+.idea
+__pycache__
+.DS_Store
