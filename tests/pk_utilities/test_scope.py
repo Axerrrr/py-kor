@@ -7,11 +7,11 @@ from py_kor.pk_utilities import Scope, EScope
 class ScopeTestCase(unittest.TestCase):
     def setUp(self) -> None:
 
-        def increment(value: Integer) -> None:
+        def increment(value: MInteger) -> None:
             value += 1
             pass
 
-        def decrement(value: Integer) -> None:
+        def decrement(value: MInteger) -> None:
             value -= 1
             pass
 
@@ -29,7 +29,7 @@ class ScopeTestCase(unittest.TestCase):
             self.assertTrue(False, f'Unexpected error: {e}')
 
     def test_enter_scope(self) -> None:
-        test_value: Integer = 0
+        test_value = MInteger(0)
 
         try:
             with Scope(on_enter=lambda: self.increment(test_value)) as sc:
@@ -40,7 +40,7 @@ class ScopeTestCase(unittest.TestCase):
         self.assertEqual(test_value, 1)
 
     def test_exit_scope(self) -> None:
-        test_value: int = 1
+        test_value = MInteger(1)
 
         try:
             with Scope(on_enter=lambda: self.decrement(test_value)) as sc:
@@ -57,4 +57,3 @@ class EScopeTestCase(unittest.TestCase):
 
     def tearDown(self) -> None:
         pass
-

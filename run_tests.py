@@ -3,10 +3,9 @@ import unittest
 
 
 def load_tests() -> unittest.TestSuite:
-    # top level directory cached on loader instance
-    this_dir = os.path.join(os.path.dirname(__file__), 'tests')
+    current_dir = os.path.join(os.path.dirname(__file__), 'tests')
     loader = unittest.TestLoader()
-    package_tests = loader.discover(start_dir=this_dir)
+    package_tests = loader.discover(start_dir=os.path.join(os.path.dirname(__file__), 'tests'))
     suite = unittest.TestSuite()
     suite.addTests(package_tests)
     return suite
