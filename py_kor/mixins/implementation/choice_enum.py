@@ -5,7 +5,7 @@ from typing import List, Tuple, Generic
 
 class ChoiceEnum(Enum):
     """
-    Extension for python enum. It can be used for choices in Django field choices
+    Extension for python enum. It can be used as mixin for choices in Django field choices
     """
     @classmethod
     def choices(cls) -> Tuple[Tuple[Generic[T], str]]:
