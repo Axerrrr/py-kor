@@ -3,10 +3,10 @@ import unittest
 from py_kor.pk_types import *
 
 
-class MBooleanTestCase(unittest.TestCase):
+class RBooleanTestCase(unittest.TestCase):
     def test_operand(self):
-        test_value_true = MBoolean(True)
-        test_value_false = MBoolean(False)
+        test_value_true = RBoolean(True)
+        test_value_false = RBoolean(False)
 
         self.assertEqual(test_value_true, test_value_true)
         self.assertEqual(test_value_true, True)

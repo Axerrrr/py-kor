@@ -1,4 +1,4 @@
-from typing import TypeVar, Generic, Tuple, Dict, Any, Type, Union
+from typing import TypeVar, Generic, Tuple, Dict, Any, Type
 
 
 # = Basic customization begin ==========================================================================================
@@ -164,27 +164,24 @@ class MutableMeta(type, Generic[T]):
                 if imm_name_value is not None:
                     setattr(result_cls, imm_name_value[0], imm_name_value[1])
 
-
-
-
         return result_cls
 
 
-class MBoolean(bool, metaclass=MutableMeta):
+class RBoolean(bool, metaclass=MutableMeta):
     pass
 
 
-class MInteger(int, metaclass=MutableMeta):
+class RInteger(int, metaclass=MutableMeta):
     pass
 
 
-class MFloat(float, metaclass=MutableMeta):
+class RFloat(float, metaclass=MutableMeta):
     pass
 
 
-class MString(str, metaclass=MutableMeta):
+class RString(str, metaclass=MutableMeta):
     pass
 
 
-class MTuple(tuple, metaclass=MutableMeta):
+class RTuple(tuple, metaclass=MutableMeta):
     pass

@@ -8,11 +8,11 @@ class ChoiceEnum(Enum):
     Extension for python enum. It can be used as mixin for choices in Django field choices
     """
     @classmethod
-    def choices(cls) -> Tuple[Tuple[Generic[T], str]]:
+    def choices(cls) -> Tuple[Tuple[T, str]]:
         return tuple((item.value, item.name) for item in cls)
 
     @classmethod
-    def values(cls) -> List[Generic[T]]:
+    def values(cls) -> List[T]:
         """
         Get list of available items in enum
         """

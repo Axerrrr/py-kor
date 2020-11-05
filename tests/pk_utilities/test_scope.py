@@ -1,17 +1,17 @@
 import unittest
 
 from py_kor.pk_types import *
-from py_kor.pk_utilities import Scope, EScope
+from py_kor.pk_utilities import Scope
 
 
 class ScopeTestCase(unittest.TestCase):
     def setUp(self) -> None:
 
-        def increment(value: MInteger) -> None:
+        def increment(value: RInteger) -> None:
             value += 1
             pass
 
-        def decrement(value: MInteger) -> None:
+        def decrement(value: RInteger) -> None:
             value -= 1
             pass
 
@@ -29,7 +29,7 @@ class ScopeTestCase(unittest.TestCase):
             self.assertTrue(False, f'Unexpected error: {e}')
 
     def test_enter_scope(self) -> None:
-        test_value = MInteger(0)
+        test_value = RInteger(0)
 
         try:
             with Scope(on_enter=lambda: self.increment(test_value)) as sc:
@@ -40,7 +40,7 @@ class ScopeTestCase(unittest.TestCase):
         self.assertEqual(test_value, 1)
 
     def test_exit_scope(self) -> None:
-        test_value = MInteger(1)
+        test_value = RInteger(1)
 
         try:
             with Scope(on_enter=lambda: self.decrement(test_value)) as sc:

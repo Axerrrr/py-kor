@@ -5,7 +5,7 @@ with open("README.md", "r") as readme_file:
 
 setuptools.setup(
     name="py-kor",
-    version="0.0.3",
+    version="0.0.4",
     author="Korobov Vladislav",
     author_email="vladankor@gmail.com",
     description="My core library with some utilities",
